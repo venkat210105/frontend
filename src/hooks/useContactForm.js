@@ -46,7 +46,7 @@ export const useContactForm = () => {
       }
 
       // Submit to backend
-      const response = await fetch("YOUR_RENDER_BACKEND_URL/api/contact", {
+      const response = await fetch("https://portfolio-o81g.onrender.com/api/contact", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
