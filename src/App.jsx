@@ -132,9 +132,6 @@ function App() {
       website: 'https://agricure-plant-disease.vercel.app',
       achievements: ['92% accuracy with CNN model', 'AI-driven diagnosis', 'Full-stack architecture']
     }
-  ]e-plant-disease.vercel.app',
-      achievements: ['92% accuracy with CNN model', 'AI-driven diagnosis', 'Full-stack architecture']
-    }
   ]
 
   const experience = [
