@@ -661,30 +661,57 @@ function App() {
               className="space-y-6"
             >
               <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <Mail className="w-5 h-5 text-primary" />
-                  <span>venkatmariserla21@gmail.com</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Phone className="w-5 h-5 text-primary" />
-                  <span>+91-7093358526</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Linkedin className="w-5 h-5 text-primary" />
-                  <span>linkedin.com/in/venkata-karthik-sai-mariserla</span>
-                </div>
-              </div>
+  <a
+    href="mailto:venkatmariserla21@gmail.com"
+    className="flex items-center space-x-3 hover:underline"
+  >
+    <Mail className="w-5 h-5 text-primary" />
+    <span>venkatmariserla21@gmail.com</span>
+  </a>
 
-              <div className="flex space-x-4">
-                <Button size="lg" className="flex-1">
-                  <Mail className="w-4 h-4 mr-2" />
-                  Email Me
-                </Button>
-                <Button size="lg" variant="outline" className="flex-1">
-                  <Linkedin className="w-4 h-4 mr-2" />
-                  LinkedIn
-                </Button>
-              </div>
+  <a
+    href="tel:+917093358526"
+    className="flex items-center space-x-3 hover:underline"
+  >
+    <Phone className="w-5 h-5 text-primary" />
+    <span>+91-7093358526</span>
+  </a>
+
+  <a
+    href="https://linkedin.com/in/venkata-karthik-sai-mariserla"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center space-x-3 hover:underline"
+  >
+    <Linkedin className="w-5 h-5 text-primary" />
+    <span>linkedin.com/in/venkata-karthik-sai-mariserla</span>
+  </a>
+</div>
+
+<div className="flex space-x-4">
+  <a
+    href="mailto:venkatmariserla21@gmail.com"
+    className="flex-1"
+  >
+    <Button size="lg" className="w-full">
+      <Mail className="w-4 h-4 mr-2" />
+      Email Me
+    </Button>
+  </a>
+
+  <a
+    href="https://linkedin.com/in/venkata-karthik-sai-mariserla"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex-1"
+  >
+    <Button size="lg" variant="outline" className="w-full">
+      <Linkedin className="w-4 h-4 mr-2" />
+      LinkedIn
+    </Button>
+  </a>
+</div>
+
             </motion.div>
 
             <motion.div
