@@ -4,7 +4,6 @@
       "runtime": "python3.9"
     }
   },
-  "ignoreCommand": "echo Skipping server build",
   "rewrites": [
     {
       "source": "/api/(.*)",
