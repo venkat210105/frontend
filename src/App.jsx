@@ -32,6 +32,10 @@ import {
   Rocket
 } from 'lucide-react'
 import profilePic from './assets/profilepic.jpg'
+import juspayImage from './assets/juspay_venkat.jpg'
+import dbsImage from './assets/dbs_venkat.jpg'
+import steelplantImage from './assets/steelplant_venkat.jpg'
+import resumePdf from './assets/venkat_resume_sysdev.pdf'
 import './App.css'
 
 function App() {
@@ -142,7 +146,7 @@ function App() {
       duration: 'February 2026 – Present',
       description: 'Contributing to high-scale payment systems through backend API validation, CI/CD pipeline optimization, and automation engineering. Focusing on distributed systems reliability and observability.',
       achievements: ['Backend API workflows for payment systems', 'Jenkins pipeline debugging & CI/CD optimization', 'Selenium & Cypress automation tools', 'Distributed systems validation', 'Log monitoring & issue resolution'],
-      image: 'my-portfolio/src/assets/img/work/juspay_venkat.jpg'
+      image: juspayImage
     },
     {
       title: 'AI DevOps Engineer Apprentice',
@@ -150,7 +154,7 @@ function App() {
       duration: 'June 2025 – February 2026',
       description: 'Advanced cloud-native microservices deployment and CI/CD automation at scale. Built production-ready pipelines and containerized services, reducing environment setup time by 70%. Implemented RESTful APIs with OAuth 2.0 security.',
       achievements: ['5+ fintech microservices on AWS EC2/S3', '3+ Jenkins & Docker CI/CD pipelines', '70% workflow automation', 'Sub-3-minute service deployment', 'REST API with OAuth 2.0 integration'],
-      image: 'my-portfolio/src/assets/img/work/dbs_venkat.jpg'
+      image: dbsImage
     },
     {
       title: 'Project Trainee',
@@ -158,7 +162,7 @@ function App() {
       duration: 'May 2024 – June 2024',
       description: 'Developed a hotel booking web app using Java Servlets and Web 2.0 technologies. Focused on full-stack development and UI/UX design.',
       achievements: ['Full-stack development', 'Java Servlets', 'UI/UX design'],
-      image: 'my-portfolio/src/assets/img/work/steelplant_venkat.jpg'
+      image: steelplantImage
     }
   ]
 
@@ -374,7 +378,7 @@ function App() {
                 <Badge variant="secondary"><MapPin className="w-3 h-3 mr-1" />Hyderabad, India</Badge>
               </div>
 
-              <a href="my-portfolio/src/assets/img/work/venkat_resume_sysdev.pdf" download className="w-full sm:w-auto inline-block">
+              <a href={resumePdf} download="venkat_resume_sysdev.pdf" className="w-full sm:w-auto inline-block">
                 <Button className="w-full sm:w-auto">
                   <Download className="w-4 h-4 mr-2" />
                   Download Resume
