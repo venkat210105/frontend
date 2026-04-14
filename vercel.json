@@ -2,20 +2,14 @@
   "functions": {
     "api/contact.py": {
       "runtime": "python3.9"
-    },
-    "ignoreCommand": "echo Skipping server build"
+    }
   },
-
-  
-  
-  
+  "ignoreCommand": "echo Skipping server build",
   "rewrites": [
     {
       "source": "/api/(.*)",
       "destination": "/api/$1"
     }
   ]
-  
-
 }
 
