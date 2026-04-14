@@ -28,7 +28,8 @@ import {
   Sun,
   Moon,
   CheckCircle,
-  AlertCircle
+  AlertCircle,
+  Rocket
 } from 'lucide-react'
 import profilePic from './assets/profilepic.jpg'
 import './App.css'
@@ -132,25 +133,32 @@ function App() {
       website: 'https://agricure-plant-disease.vercel.app',
       achievements: ['92% accuracy with CNN model', 'AI-driven diagnosis', 'Full-stack architecture']
     }
-  ]e-plant-disease.vercel.app',
-      achievements: ['92% accuracy with CNN model', 'AI-driven diagnosis', 'Full-stack architecture']
-    }
   ]
 
   const experience = [
     {
-      title: 'Digital Talent Incubator (DTI) Apprentice',
-      company: 'DBS Bank',
-      duration: 'June 2025 – Present',
-      description: 'Selected for DBS\'s flagship DTI program, gaining in-depth exposure to backend and full-stack development in a cloud-native fintech environment.',
-      achievements: ['Cloud-native development', 'CI/CD workflows', 'Agile methodologies']
+      title: 'Software Development Engineer Test (SDET) Intern',
+      company: 'Juspay Technologies',
+      duration: 'February 2026 – Present',
+      description: 'Contributing to high-scale payment systems through backend API validation, CI/CD pipeline optimization, and automation engineering. Focusing on distributed systems reliability and observability.',
+      achievements: ['Backend API workflows for payment systems', 'Jenkins pipeline debugging & CI/CD optimization', 'Selenium & Cypress automation tools', 'Distributed systems validation', 'Log monitoring & issue resolution'],
+      image: 'my-portfolio/src/assets/img/work/juspay_venkat.jpg'
+    },
+    {
+      title: 'AI DevOps Engineer Apprentice',
+      company: 'DBS Tech',
+      duration: 'June 2025 – February 2026',
+      description: 'Advanced cloud-native microservices deployment and CI/CD automation at scale. Built production-ready pipelines and containerized services, reducing environment setup time by 70%. Implemented RESTful APIs with OAuth 2.0 security.',
+      achievements: ['5+ fintech microservices on AWS EC2/S3', '3+ Jenkins & Docker CI/CD pipelines', '70% workflow automation', 'Sub-3-minute service deployment', 'REST API with OAuth 2.0 integration'],
+      image: 'my-portfolio/src/assets/img/work/dbs_venkat.jpg'
     },
     {
       title: 'Project Trainee',
       company: 'Visakhapatnam Steel Plant (RINL)',
       duration: 'May 2024 – June 2024',
       description: 'Developed a hotel booking web app using Java Servlets and Web 2.0 technologies. Focused on full-stack development and UI/UX design.',
-      achievements: ['Full-stack development', 'Java Servlets', 'UI/UX design']
+      achievements: ['Full-stack development', 'Java Servlets', 'UI/UX design'],
+      image: 'my-portfolio/src/assets/img/work/steelplant_venkat.jpg'
     }
   ]
 
@@ -227,37 +235,76 @@ function App() {
       <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
         <motion.div 
           style={{ y }}
-          className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20"
+          className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-secondary/20"
         />
-        <div className="relative z-10 text-center px-4">
+        {/* Decorative elements */}
+        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl opacity-20" />
+        <div className="absolute bottom-20 right-10 w-72 h-72 bg-secondary/10 rounded-full blur-3xl opacity-20" />
+        
+        <div className="relative z-10 text-center px-4 max-w-5xl">
+          {/* Accent line above */}
+          <motion.div
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="h-1 w-16 bg-gradient-to-r from-primary to-secondary mx-auto mb-8 rounded-full"
+          />
+          
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-4xl md:text-6xl font-bold mb-6"
+            className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-foreground via-foreground to-muted-foreground bg-clip-text text-transparent"
           >
             Mariserla Venkata Karthik Sai
           </motion.h1>
+          
+          <motion.div
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="h-1 w-16 bg-gradient-to-r from-secondary to-primary mx-auto mb-8 rounded-full"
+          />
+          
           <motion.p 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto"
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="text-lg md:text-2xl font-light text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed"
           >
             Aspiring Software Engineer passionate about building AI-powered digital workplace tools and scalable backend systems
           </motion.p>
+          
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <Button size="lg" onClick={() => scrollToSection('projects')}>
+            <Button size="lg" onClick={() => scrollToSection('projects')} className="px-8 py-6 text-base">
               View My Work
             </Button>
-            <Button size="lg" variant="outline" onClick={() => scrollToSection('contact')}>
+            <Button size="lg" variant="outline" onClick={() => scrollToSection('contact')} className="px-8 py-6 text-base">
               Get In Touch
             </Button>
+          </motion.div>
+          
+          {/* Scroll indicator */}
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 1 }}
+            className="absolute -bottom-28 left-1/2 transform -translate-x-1/2"
+          >
+            <motion.div
+              animate={{ y: [0, 8, 0] }}
+              transition={{ duration: 2, repeat: Infinity }}
+              className="flex flex-col items-center"
+            >
+              <div className="w-6 h-10 border-2 border-muted-foreground rounded-full p-2">
+                <div className="w-1 h-2 bg-muted-foreground rounded-full mx-auto" />
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -302,14 +349,22 @@ function App() {
                 platforms through agile innovation and robust full-stack solutions.
               </p>
               
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-4 gap-3">
                 <div className="text-center p-4 bg-accent rounded-lg">
                   <div className="text-2xl font-bold text-primary">9.08</div>
-                  <div className="text-sm text-muted-foreground">CGPA</div>
+                  <div className="text-xs text-muted-foreground">CGPA</div>
                 </div>
                 <div className="text-center p-4 bg-accent rounded-lg">
                   <div className="text-2xl font-bold text-primary">3+</div>
-                  <div className="text-sm text-muted-foreground">Projects</div>
+                  <div className="text-xs text-muted-foreground">Projects</div>
+                </div>
+                <div className="text-center p-4 bg-accent rounded-lg">
+                  <div className="text-2xl font-bold text-primary">2+</div>
+                  <div className="text-xs text-muted-foreground">Internships</div>
+                </div>
+                <div className="text-center p-4 bg-accent rounded-lg">
+                  <div className="text-2xl font-bold text-primary">8+</div>
+                  <div className="text-xs text-muted-foreground">Tech Skills</div>
                 </div>
               </div>
 
@@ -319,10 +374,12 @@ function App() {
                 <Badge variant="secondary"><MapPin className="w-3 h-3 mr-1" />Hyderabad, India</Badge>
               </div>
 
-              <Button className="w-full sm:w-auto">
-                <Download className="w-4 h-4 mr-2" />
-                Download Resume
-              </Button>
+              <a href="my-portfolio/src/assets/img/work/venkat_resume_sysdev.pdf" download className="w-full sm:w-auto inline-block">
+                <Button className="w-full sm:w-auto">
+                  <Download className="w-4 h-4 mr-2" />
+                  Download Resume
+                </Button>
+              </a>
             </motion.div>
           </div>
         </div>
@@ -523,40 +580,65 @@ function App() {
             </p>
           </motion.div>
 
-          <div className="space-y-8">
+          <div className="space-y-16 relative pb-20">
+            {/* Continuous curved line spanning all experiences */}
+            <div className="absolute left-8 top-0 bottom-0 pointer-events-none -z-10 h-full">
+              <svg width="256" height="100%" viewBox="0 0 256 2000" className="stroke-foreground/40 w-full h-full" preserveAspectRatio="none">
+                <path
+                  d="M 128 0 Q 20 75, 128 150 Q 236 225, 128 300 Q 20 375, 128 450 Q 236 525, 128 600 Q 20 675, 128 750 Q 236 825, 128 900 Q 20 975, 128 1050 Q 236 1125, 128 1200 Q 20 1275, 128 1350 Q 236 1425, 128 1500 Q 20 1575, 128 1650 Q 236 1725, 128 1800 Q 20 1875, 128 1950 Q 236 1975, 128 2000"
+                  fill="none"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </div>
+
+            {/* Experience cards */}
             {experience.map((exp, index) => (
-              <motion.div
-                key={exp.title}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-              >
-                <Card>
-                  <CardHeader>
-                    <div className="flex flex-col md:flex-row md:items-center md:justify-between">
-                      <div>
-                        <CardTitle className="flex items-center">
-                          <Briefcase className="w-5 h-5 mr-2 text-primary" />
-                          {exp.title}
-                        </CardTitle>
-                        <CardDescription className="text-lg font-medium">{exp.company}</CardDescription>
+              <div key={exp.title} className="relative z-10">
+                <motion.div
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8 }}
+                >
+                  <div className={`flex flex-col ${exp.image ? 'md:flex-row' : ''} gap-6 items-stretch`}>
+                    <Card className="flex-1">
+                      <CardHeader>
+                        <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+                          <div>
+                            <CardTitle className="flex items-center">
+                              <Briefcase className="w-5 h-5 mr-2 text-primary" />
+                              {exp.title}
+                            </CardTitle>
+                            <CardDescription className="text-lg font-medium">{exp.company}</CardDescription>
+                          </div>
+                          <Badge variant="outline" className="mt-2 md:mt-0">
+                            <Calendar className="w-3 h-3 mr-1" />
+                            {exp.duration}
+                          </Badge>
+                        </div>
+                      </CardHeader>
+                      <CardContent>
+                        <p className="text-muted-foreground mb-4">{exp.description}</p>
+                        <div className="flex flex-wrap gap-2">
+                          {exp.achievements.map((achievement) => (
+                            <Badge key={achievement} variant="secondary">{achievement}</Badge>
+                          ))}
+                        </div>
+                      </CardContent>
+                    </Card>
+                    {exp.image && (
+                      <div className="md:w-64 flex-shrink-0">
+                        <img 
+                          src={exp.image} 
+                          alt={`${exp.company} - ${exp.title}`}
+                          className="w-full h-64 object-cover rounded-lg shadow-lg"
+                        />
                       </div>
-                      <Badge variant="outline" className="mt-2 md:mt-0">
-                        <Calendar className="w-3 h-3 mr-1" />
-                        {exp.duration}
-                      </Badge>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground mb-4">{exp.description}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {exp.achievements.map((achievement) => (
-                        <Badge key={achievement} variant="secondary">{achievement}</Badge>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
+                    )}
+                  </div>
+                </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -679,18 +761,22 @@ function App() {
               </div>
 
               <div className="flex space-x-4">
-                <Button size="lg" className="flex-1">
-                  <Mail className="w-4 h-4 mr-2" />
-                  Email Me
-                </Button>
-                <Button size="lg" variant="outline" className="flex-1">
-                  <Linkedin className="w-4 h-4 mr-2" />
-                  LinkedIn
-                </Button>
+                <a href="mailto:venkatmariserla21@gmail.com" className="flex-1">
+                  <Button size="lg" className="flex-1">
+                    <Mail className="w-4 h-4 mr-2" />
+                    Email Me
+                  </Button>
+                </a>
+                <a href="https://www.linkedin.com/in/venkata-karthik-sai-mariserla/" target="_blank" rel="noopener noreferrer" className="flex-1">
+                  <Button size="lg" variant="outline" className="flex-1">
+                    <Linkedin className="w-4 h-4 mr-2" />
+                    LinkedIn
+                  </Button>
+                </a>
               </div>
             </motion.div>
 
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
@@ -737,7 +823,6 @@ function App() {
                       required
                     />
                     
-                    {/* Status Messages */}
                     {submitStatus === 'success' && (
                       <div className="flex items-center text-green-600 text-sm">
                         <CheckCircle className="w-4 h-4 mr-2" />
@@ -762,7 +847,7 @@ function App() {
                   </form>
                 </CardContent>
               </Card>
-            </motion.div>
+            </motion.div> */}
           </div>
         </div>
       </section>
@@ -770,9 +855,12 @@ function App() {
       {/* Footer */}
       <footer className="py-8 px-4 border-t">
         <div className="max-w-7xl mx-auto text-center">
-          <p className="text-muted-foreground">
-            © 2024 Mariserla Venkata Karthik Sai. Built with React and deployed on Vercel.
-          </p>
+          <div className="flex items-center justify-center space-x-2">
+            <p className="text-muted-foreground">
+              © 2024 Mariserla Venkata Karthik Sai. Crafted with passion, powered by code.
+            </p>
+            <Rocket className="w-5 h-5 text-foreground" />
+          </div>
         </div>
       </footer>
     </div>
